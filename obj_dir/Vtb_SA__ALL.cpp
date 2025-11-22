@@ -5,5 +5,6 @@
 #include "Vtb_SA___024root__DepSet_h2e68f050__0.cpp"
 #include "Vtb_SA__main.cpp"
 #include "Vtb_SA___024root__Slow.cpp"
+#include "Vtb_SA___024root__DepSet_h52058df0__0__Slow.cpp"
 #include "Vtb_SA___024root__DepSet_h2e68f050__0__Slow.cpp"
 #include "Vtb_SA__Syms.cpp"

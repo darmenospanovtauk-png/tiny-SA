@@ -8,8 +8,8 @@ module tb_SA;
     logic rst_n;
     logic clk;
     logic en;  
-    logic signed [WIDTH-1:0] a_in [N][N]; 
-    logic signed [WIDTH-1:0] b_in [N][N];
+    logic signed [WIDTH-1:0] a_in [N]; 
+    logic signed [WIDTH-1:0] b_in [N];
     logic signed [ACC-1:0]   acc_out [N][N];  
 
     SA #(
@@ -32,18 +32,20 @@ module tb_SA;
         // 1) init + reset
         rst_n = 0;
         en    = 0;
-        a_in  = 0;
-        b_in  = 0;
+        a_in [0] = 8'd0;
+        a_in [1] = 8'd0;
+        b_in [0] = 8'd0;
+        b_in [1] = 8'd0;
 
         repeat (3) @(posedge clk);
         rst_n = 1;
 
         @(posedge clk); 
 
-        a_in [0] = 3;
-        a_in [1] = 4;
-        b_in [0] = 5;
-        b_in [1] = 6;
+        a_in [0] = 8'd3;
+        a_in [1] = 8'd4;
+        b_in [0] = 8'd5;
+        b_in [1] = 8'd6;
         en = 1; 
 
         repeat (4) begin 

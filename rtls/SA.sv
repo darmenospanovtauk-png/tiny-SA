@@ -71,7 +71,7 @@ module SA #(
         .clk    (clk),
         .en     (en), 
         .a_in   (a_pipe [1][0]), 
-        .b_in   (a_pipe [0][1]),
+        .b_in   (b_pipe [0][1]),
         .a_out  (a_pipe [1][1]), 
         .b_out  (b_pipe [1][1]),
         .acc_out(acc_out [1][1])
