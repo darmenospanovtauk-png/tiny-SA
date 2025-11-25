@@ -358,6 +358,15 @@ VL_ATTR_COLD void Vtb_SA_core___024root___ctor_var_reset(Vtb_SA_core___024root* 
             vlSelf->tb_SA_core__DOT__ACC_ref[__Vi0][__Vi1] = VL_RAND_RESET_I(32);
         }
     }
+    vlSelf->tb_SA_core__DOT__tmp_A_in = VL_RAND_RESET_I(8);
+    vlSelf->tb_SA_core__DOT__tmp_B_in = VL_RAND_RESET_I(8);
+    vlSelf->tb_SA_core__DOT__mismatch = 0;
+    vlSelf->tb_SA_core__DOT____Vlvbound_h005cfd1f__0 = VL_RAND_RESET_I(32);
+    vlSelf->tb_SA_core__DOT____Vlvbound_h005cfd1f__1 = VL_RAND_RESET_I(32);
+    vlSelf->tb_SA_core__DOT____Vlvbound_h028fe111__0 = VL_RAND_RESET_I(8);
+    vlSelf->tb_SA_core__DOT____Vlvbound_h2f370f39__0 = VL_RAND_RESET_I(8);
+    vlSelf->tb_SA_core__DOT____Vlvbound_h428a44c6__1 = VL_RAND_RESET_I(8);
+    vlSelf->tb_SA_core__DOT____Vlvbound_hef0423fa__1 = VL_RAND_RESET_I(8);
     for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
         vlSelf->tb_SA_core__DOT__dut__DOT__a_in[__Vi0] = VL_RAND_RESET_I(8);
     }

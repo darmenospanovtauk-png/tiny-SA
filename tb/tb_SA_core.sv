@@ -5,6 +5,7 @@ module tb_SA_core;
   localparam int N = 3;
   localparam int WIDTH = 8;
   localparam int ACC = 32;
+  localparam int NUM_TESTS = 10;
 
   logic clk, rst_n, start, done;
 
@@ -14,7 +15,9 @@ module tb_SA_core;
   logic signed [WIDTH-1:0] A_in [N][N];
   logic signed [WIDTH-1:0] B_in [N][N];
   logic signed [ACC-1:0]   ACC_ref[N][N];
-
+  
+logic signed [WIDTH-1:0] tmp_A_in;
+logic signed [WIDTH-1:0] tmp_B_in;
   SA_core #(
     .N(N),
     .WIDTH(WIDTH),
@@ -32,8 +35,21 @@ module tb_SA_core;
   initial clk = 0;
   always #5 clk <= ~clk;
 
-  integer i, j, k;
+  integer i, j, k, test;
+  bit mismatch; 
 
+    // Reference ACC = A * B
+    task automatic compute_ref_acc(); 
+    for (i = 0; i < N; i++)
+      for (j = 0; j < N; j++) begin
+        ACC_ref[i][j] = '0;
+        for (k = 0; k < N; k++)
+          ACC_ref[i][j] += A_in[i][k] * B_in[k][j];
+      end
+    endtask
+
+
+//start of the initial begin 
   initial begin
     rst_n = 0;
     start = 0;
@@ -43,62 +59,65 @@ module tb_SA_core;
       for (j = 0; j < N; j++) begin
         A_mem[i][j] = '0;
         B_mem[i][j] = '0;
-      end
-
-    // A matrix
-    A_in[0][0] = 1; A_in[0][1] = 2; A_in[0][2] = 2;
-    A_in[1][0] = 3; A_in[1][1] = 4; A_in[1][2] = 4;
-    A_in[2][0] = 3; A_in[2][1] = 4; A_in[2][2] = 4;
-
-    // B matrix
-    B_in[0][0] = 5; B_in[0][1] = 6; B_in[0][2] = 6;
-    B_in[1][0] = 7; B_in[1][1] = 8; B_in[1][2] = 8;
-    B_in[2][0] = 7; B_in[2][1] = 8; B_in[2][2] = 8;
-
-    // Reference ACC = A * B
-    for (i = 0; i < N; i++)
-      for (j = 0; j < N; j++) begin
-        ACC_ref[i][j] = '0;
-        for (k = 0; k < N; k++)
-          ACC_ref[i][j] += A_in[i][k] * B_in[k][j];
-      end
+      end 
 
     // Reset
     repeat (3) @(posedge clk);
     rst_n = 1;
-    // Load matrices
+
+
+    for (test = 0; test <NUM_TESTS; test++) begin
+    // Load matrix - random 
+    @(posedge clk);
+    for (i = 0; i < N; i++)
+      for (j = 0; j < N; j++) begin
+        tmp_A_in = WIDTH'($urandom_range(-4, 4));
+        tmp_B_in = WIDTH'($urandom_range(-4, 4));
+        A_in[i][j] = tmp_A_in[WIDTH-1:0];
+        B_in[i][j] = tmp_B_in[WIDTH-1:0];
+      end
+
+    //load data to ref_model 
+    compute_ref_acc(); 
+
+    //load data to 
     for (i = 0; i < N; i++)
       for (j = 0; j < N; j++) begin
         A_mem[i][j] = A_in[i][j];
         B_mem[i][j] = B_in[i][j];
       end
 
-
     @(posedge clk);
     start = 1;
     @(posedge clk);
     start = 0;
 
-
     // Wait for done
     wait(done);
-
-    // Clear memories
-    for (i = 0; i < N; i++)
-      for (j = 0; j < N; j++) begin
-        A_mem[i][j] = '0;
-        B_mem[i][j] = '0;
-      end
-
+    
+    repeat (2*N) @(posedge clk);
+    mismatch = 0; 
     // Display results
-    $display("Final acc_out vs ACC_ref:");
-    for (i = 0; i < N; i++)
-      for (j = 0; j < N; j++)
-        $display("C[%0d][%0d]: acc_out=%0d  ACC_ref=%0d",
-                 i, j, C_out[i][j], ACC_ref[i][j]);
 
+    for (i = 0; i < N; i++)
+      for (j = 0; j < N; j++) begin 
+        if (C_out[i][j] !== ACC_ref[i][j]) begin
+        mismatch = 1; 
+      end 
+      end 
+
+      if (mismatch) begin 
+        $display("Test failed"); 
+        $finish;
+      end else begin
+        $display("Test passed");
+      end
+    
+
+  end
+
+     $display("All tests are passed"); 
     #20;
     $finish;
   end
-
 endmodule
