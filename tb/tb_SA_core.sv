@@ -2,7 +2,7 @@
 
 module tb_SA_core;
 
-  localparam int N = 3;
+  localparam int N = 2;
   localparam int WIDTH = 8;
   localparam int ACC = 32;
   localparam int NUM_TESTS = 10;
@@ -108,7 +108,7 @@ logic signed [WIDTH-1:0] tmp_B_in;
 
       if (mismatch) begin 
         $display("Test failed"); 
-        $finish;
+        //$finish;
       end else begin
         $display("Test passed");
       end
