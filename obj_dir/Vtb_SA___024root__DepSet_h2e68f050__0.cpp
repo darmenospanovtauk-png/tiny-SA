@@ -25,99 +25,209 @@ VL_INLINE_OPT VlCoroutine Vtb_SA___024root___eval_initial__TOP__Vtiming__0(Vtb_S
     if (false && vlSelf) {}  // Prevent unused
     Vtb_SA__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_SA___024root___eval_initial__TOP__Vtiming__0\n"); );
+    // Init
+    IData/*31:0*/ tb_SA__DOT__t;
+    tb_SA__DOT__t = 0;
+    IData/*31:0*/ tb_SA__DOT__T_TOTAL;
+    tb_SA__DOT__T_TOTAL = 0;
     // Body
     vlSelf->tb_SA__DOT__rst_n = 0U;
     vlSelf->tb_SA__DOT__en = 0U;
     vlSelf->tb_SA__DOT__a_in[0U] = 0U;
-    vlSelf->tb_SA__DOT__a_in[1U] = 0U;
     vlSelf->tb_SA__DOT__b_in[0U] = 0U;
+    vlSelf->tb_SA__DOT__a_in[1U] = 0U;
+    vlSelf->tb_SA__DOT__b_in[1U] = 0U;
+    vlSelf->tb_SA__DOT__A_in[0U][0U] = 1U;
+    vlSelf->tb_SA__DOT__A_in[0U][1U] = 2U;
+    vlSelf->tb_SA__DOT__A_in[1U][0U] = 3U;
+    vlSelf->tb_SA__DOT__A_in[1U][1U] = 4U;
+    vlSelf->tb_SA__DOT__B_in[0U][0U] = 5U;
+    vlSelf->tb_SA__DOT__B_in[0U][1U] = 6U;
+    vlSelf->tb_SA__DOT__B_in[1U][0U] = 7U;
+    vlSelf->tb_SA__DOT__B_in[1U][1U] = 8U;
+    vlSelf->tb_SA__DOT__ACC_ref[0U][0U] = 0U;
+    vlSelf->tb_SA__DOT__ACC_ref[0U][0U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [0U][0U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [0U]
+                                                                       [0U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [0U]
+                                                                       [0U])));
+    vlSelf->tb_SA__DOT__ACC_ref[0U][0U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [0U][0U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [0U]
+                                                                       [1U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [1U]
+                                                                       [0U])));
+    vlSelf->tb_SA__DOT__ACC_ref[0U][1U] = 0U;
+    vlSelf->tb_SA__DOT__ACC_ref[0U][1U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [0U][1U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [0U]
+                                                                       [0U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [0U]
+                                                                       [1U])));
+    vlSelf->tb_SA__DOT__ACC_ref[0U][1U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [0U][1U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [0U]
+                                                                       [1U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [1U]
+                                                                       [1U])));
+    vlSelf->tb_SA__DOT__ACC_ref[1U][0U] = 0U;
+    vlSelf->tb_SA__DOT__ACC_ref[1U][0U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [1U][0U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [1U]
+                                                                       [0U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [0U]
+                                                                       [0U])));
+    vlSelf->tb_SA__DOT__ACC_ref[1U][0U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [1U][0U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [1U]
+                                                                       [1U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [1U]
+                                                                       [0U])));
+    vlSelf->tb_SA__DOT__ACC_ref[1U][1U] = 0U;
+    vlSelf->tb_SA__DOT__ACC_ref[1U][1U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [1U][1U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [1U]
+                                                                       [0U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [0U]
+                                                                       [1U])));
+    vlSelf->tb_SA__DOT__ACC_ref[1U][1U] = (vlSelf->tb_SA__DOT__ACC_ref
+                                           [1U][1U] 
+                                           + VL_MULS_III(32, 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__A_in
+                                                                       [1U]
+                                                                       [1U]), 
+                                                         VL_EXTENDS_II(32,8, 
+                                                                       vlSelf->tb_SA__DOT__B_in
+                                                                       [1U]
+                                                                       [1U])));
+    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_SA.clk)", 
+                                                       "tb/tb_SA.sv", 
+                                                       70);
+    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_SA.clk)", 
+                                                       "tb/tb_SA.sv", 
+                                                       70);
+    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
+                                                       nullptr, 
+                                                       "@(posedge tb_SA.clk)", 
+                                                       "tb/tb_SA.sv", 
+                                                       70);
+    vlSelf->tb_SA__DOT__rst_n = 1U;
+    tb_SA__DOT__T_TOTAL = 6U;
+    tb_SA__DOT__t = 0U;
+    while (VL_LTS_III(32, tb_SA__DOT__t, tb_SA__DOT__T_TOTAL)) {
+        vlSelf->tb_SA__DOT__k_idx = tb_SA__DOT__t;
+        vlSelf->tb_SA__DOT__a_in[0U] = ((VL_LTES_III(32, 0U, vlSelf->tb_SA__DOT__k_idx) 
+                                         & VL_GTS_III(32, 2U, vlSelf->tb_SA__DOT__k_idx))
+                                         ? vlSelf->tb_SA__DOT__A_in
+                                        [0U][(1U & vlSelf->tb_SA__DOT__k_idx)]
+                                         : 0U);
+        vlSelf->tb_SA__DOT__k_idx = (tb_SA__DOT__t 
+                                     - (IData)(1U));
+        vlSelf->tb_SA__DOT__a_in[1U] = ((VL_LTES_III(32, 0U, vlSelf->tb_SA__DOT__k_idx) 
+                                         & VL_GTS_III(32, 2U, vlSelf->tb_SA__DOT__k_idx))
+                                         ? vlSelf->tb_SA__DOT__A_in
+                                        [1U][(1U & vlSelf->tb_SA__DOT__k_idx)]
+                                         : 0U);
+        vlSelf->tb_SA__DOT__k_idx = tb_SA__DOT__t;
+        vlSelf->tb_SA__DOT__b_in[0U] = ((VL_LTES_III(32, 0U, vlSelf->tb_SA__DOT__k_idx) 
+                                         & VL_GTS_III(32, 2U, vlSelf->tb_SA__DOT__k_idx))
+                                         ? vlSelf->tb_SA__DOT__B_in
+                                        [(1U & vlSelf->tb_SA__DOT__k_idx)]
+                                        [0U] : 0U);
+        vlSelf->tb_SA__DOT__k_idx = (tb_SA__DOT__t 
+                                     - (IData)(1U));
+        vlSelf->tb_SA__DOT__b_in[1U] = ((VL_LTES_III(32, 0U, vlSelf->tb_SA__DOT__k_idx) 
+                                         & VL_GTS_III(32, 2U, vlSelf->tb_SA__DOT__k_idx))
+                                         ? vlSelf->tb_SA__DOT__B_in
+                                        [(1U & vlSelf->tb_SA__DOT__k_idx)]
+                                        [1U] : 0U);
+        vlSelf->tb_SA__DOT__en = 1U;
+        co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
+                                                           nullptr, 
+                                                           "@(posedge tb_SA.clk)", 
+                                                           "tb/tb_SA.sv", 
+                                                           97);
+        tb_SA__DOT__t = ((IData)(1U) + tb_SA__DOT__t);
+    }
+    vlSelf->tb_SA__DOT__en = 0U;
+    vlSelf->tb_SA__DOT__a_in[0U] = 0U;
+    vlSelf->tb_SA__DOT__b_in[0U] = 0U;
+    vlSelf->tb_SA__DOT__a_in[1U] = 0U;
     vlSelf->tb_SA__DOT__b_in[1U] = 0U;
     co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_SA.clk)", 
                                                        "tb/tb_SA.sv", 
-                                                       40);
+                                                       107);
     co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_SA.clk)", 
                                                        "tb/tb_SA.sv", 
-                                                       40);
+                                                       107);
     co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_SA.clk)", 
                                                        "tb/tb_SA.sv", 
-                                                       40);
-    vlSelf->tb_SA__DOT__rst_n = 1U;
+                                                       107);
     co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
                                                        nullptr, 
                                                        "@(posedge tb_SA.clk)", 
                                                        "tb/tb_SA.sv", 
-                                                       43);
-    vlSelf->tb_SA__DOT__a_in[0U] = 3U;
-    vlSelf->tb_SA__DOT__a_in[1U] = 4U;
-    vlSelf->tb_SA__DOT__b_in[0U] = 5U;
-    vlSelf->tb_SA__DOT__b_in[1U] = 6U;
-    vlSelf->tb_SA__DOT__en = 1U;
-    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_SA.clk)", 
-                                                       "tb/tb_SA.sv", 
-                                                       52);
-    VL_WRITEF("t=%0t ns | acc_out_00=0%0d | acc_out_01=0%0d\nt=%0t ns | acc_out_10=0%0d | acc_out_11=0%0d\n",
-              64,VL_TIME_UNITED_Q(1000),-9,32,vlSelf->tb_SA__DOT__acc_out
-              [0U][0U],32,vlSelf->tb_SA__DOT__acc_out
-              [0U][1U],64,VL_TIME_UNITED_Q(1000),-9,
+                                                       107);
+    VL_WRITEF("Final acc_out vs ACC_ref\nC[0][0]: acc_out=%0d vs ACC_ref=%0d\nC[0][1]: acc_out=%0d vs ACC_ref=%0d\nC[1][0]: acc_out=%0d vs ACC_ref=%0d\nC[1][1]: acc_out=%0d vs ACC_ref=%0d\n",
+              32,vlSelf->tb_SA__DOT__acc_out[0U][0U],
+              32,vlSelf->tb_SA__DOT__ACC_ref[0U][0U],
+              32,vlSelf->tb_SA__DOT__acc_out[0U][1U],
+              32,vlSelf->tb_SA__DOT__ACC_ref[0U][1U],
               32,vlSelf->tb_SA__DOT__acc_out[1U][0U],
-              32,vlSelf->tb_SA__DOT__acc_out[1U][1U]);
-    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_SA.clk)", 
-                                                       "tb/tb_SA.sv", 
-                                                       52);
-    VL_WRITEF("t=%0t ns | acc_out_00=0%0d | acc_out_01=0%0d\nt=%0t ns | acc_out_10=0%0d | acc_out_11=0%0d\n",
-              64,VL_TIME_UNITED_Q(1000),-9,32,vlSelf->tb_SA__DOT__acc_out
-              [0U][0U],32,vlSelf->tb_SA__DOT__acc_out
-              [0U][1U],64,VL_TIME_UNITED_Q(1000),-9,
-              32,vlSelf->tb_SA__DOT__acc_out[1U][0U],
-              32,vlSelf->tb_SA__DOT__acc_out[1U][1U]);
-    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_SA.clk)", 
-                                                       "tb/tb_SA.sv", 
-                                                       52);
-    VL_WRITEF("t=%0t ns | acc_out_00=0%0d | acc_out_01=0%0d\nt=%0t ns | acc_out_10=0%0d | acc_out_11=0%0d\n",
-              64,VL_TIME_UNITED_Q(1000),-9,32,vlSelf->tb_SA__DOT__acc_out
-              [0U][0U],32,vlSelf->tb_SA__DOT__acc_out
-              [0U][1U],64,VL_TIME_UNITED_Q(1000),-9,
-              32,vlSelf->tb_SA__DOT__acc_out[1U][0U],
-              32,vlSelf->tb_SA__DOT__acc_out[1U][1U]);
-    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_SA.clk)", 
-                                                       "tb/tb_SA.sv", 
-                                                       52);
-    VL_WRITEF("t=%0t ns | acc_out_00=0%0d | acc_out_01=0%0d\nt=%0t ns | acc_out_10=0%0d | acc_out_11=0%0d\n",
-              64,VL_TIME_UNITED_Q(1000),-9,32,vlSelf->tb_SA__DOT__acc_out
-              [0U][0U],32,vlSelf->tb_SA__DOT__acc_out
-              [0U][1U],64,VL_TIME_UNITED_Q(1000),-9,
-              32,vlSelf->tb_SA__DOT__acc_out[1U][0U],
-              32,vlSelf->tb_SA__DOT__acc_out[1U][1U]);
-    vlSelf->tb_SA__DOT__en = 0U;
-    co_await vlSelf->__VtrigSched_h34e3e0b0__0.trigger(0U, 
-                                                       nullptr, 
-                                                       "@(posedge tb_SA.clk)", 
-                                                       "tb/tb_SA.sv", 
-                                                       58);
-    VL_WRITEF("FINAL: t=%0t ns | acc_out_00=0%0d | acc_out_01=0%0d\nFINAL: t=%0t ns | acc_out_10=0%0d | acc_out_11=0%0d\n",
-              64,VL_TIME_UNITED_Q(1000),-9,32,vlSelf->tb_SA__DOT__acc_out
-              [0U][0U],32,vlSelf->tb_SA__DOT__acc_out
-              [0U][1U],64,VL_TIME_UNITED_Q(1000),-9,
-              32,vlSelf->tb_SA__DOT__acc_out[1U][0U],
-              32,vlSelf->tb_SA__DOT__acc_out[1U][1U]);
-    co_await vlSelf->__VdlySched.delay(0xc350ULL, nullptr, 
+              32,vlSelf->tb_SA__DOT__ACC_ref[1U][0U],
+              32,vlSelf->tb_SA__DOT__acc_out[1U][1U],
+              32,vlSelf->tb_SA__DOT__ACC_ref[1U][1U]);
+    co_await vlSelf->__VdlySched.delay(0x4e20ULL, nullptr, 
                                        "tb/tb_SA.sv", 
-                                       62);
-    VL_FINISH_MT("tb/tb_SA.sv", 63, "");
+                                       117);
+    VL_FINISH_MT("tb/tb_SA.sv", 118, "");
 }
 
 VL_INLINE_OPT VlCoroutine Vtb_SA___024root___eval_initial__TOP__Vtiming__1(Vtb_SA___024root* vlSelf) {
@@ -129,7 +239,7 @@ VL_INLINE_OPT VlCoroutine Vtb_SA___024root___eval_initial__TOP__Vtiming__1(Vtb_S
         co_await vlSelf->__VdlySched.delay(0x1388ULL, 
                                            nullptr, 
                                            "tb/tb_SA.sv", 
-                                           29);
+                                           35);
         vlSelf->__Vdlyvval__tb_SA__DOT__clk__v0 = (1U 
                                                    & (~ (IData)(vlSelf->tb_SA__DOT__clk)));
         vlSelf->__Vdlyvset__tb_SA__DOT__clk__v0 = 1U;
@@ -149,16 +259,16 @@ VL_INLINE_OPT void Vtb_SA___024root___nba_sequent__TOP__0(Vtb_SA___024root* vlSe
     // Body
     if (vlSelf->tb_SA__DOT__rst_n) {
         if (vlSelf->tb_SA__DOT__en) {
-            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__acc_out 
-                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__acc_out 
+            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out 
+                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out 
                    + VL_MULS_III(32, VL_EXTENDS_II(32,8, 
                                                    vlSelf->tb_SA__DOT__a_in
                                                    [0U]), 
                                  VL_EXTENDS_II(32,8, 
                                                vlSelf->tb_SA__DOT__b_in
                                                [0U])));
-            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__acc_out 
-                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__acc_out 
+            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out 
+                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out 
                    + VL_MULS_III(32, VL_EXTENDS_II(32,8, 
                                                    vlSelf->tb_SA__DOT__a_in
                                                    [1U]), 
@@ -166,8 +276,8 @@ VL_INLINE_OPT void Vtb_SA___024root___nba_sequent__TOP__0(Vtb_SA___024root* vlSe
                                                vlSelf->tb_SA__DOT__dut__DOT__b_pipe
                                                [0U]
                                                [0U])));
-            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__acc_out 
-                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__acc_out 
+            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out 
+                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out 
                    + VL_MULS_III(32, VL_EXTENDS_II(32,8, 
                                                    vlSelf->tb_SA__DOT__dut__DOT__a_pipe
                                                    [0U]
@@ -175,8 +285,8 @@ VL_INLINE_OPT void Vtb_SA___024root___nba_sequent__TOP__0(Vtb_SA___024root* vlSe
                                  VL_EXTENDS_II(32,8, 
                                                vlSelf->tb_SA__DOT__b_in
                                                [1U])));
-            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__acc_out 
-                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__acc_out 
+            vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out 
+                = (vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out 
                    + VL_MULS_III(32, VL_EXTENDS_II(32,8, 
                                                    vlSelf->tb_SA__DOT__dut__DOT__a_pipe
                                                    [1U]
@@ -186,52 +296,52 @@ VL_INLINE_OPT void Vtb_SA___024root___nba_sequent__TOP__0(Vtb_SA___024root* vlSe
                                                [0U]
                                                [1U])));
         }
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__a_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__a_out 
             = vlSelf->tb_SA__DOT__a_in[1U];
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__b_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__b_out 
             = vlSelf->tb_SA__DOT__b_in[1U];
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__b_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__b_out 
             = vlSelf->tb_SA__DOT__b_in[0U];
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__a_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__a_out 
             = vlSelf->tb_SA__DOT__a_in[0U];
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__b_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__b_out 
             = vlSelf->tb_SA__DOT__dut__DOT__b_pipe[0U]
             [1U];
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__a_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__a_out 
             = vlSelf->tb_SA__DOT__dut__DOT__a_pipe[1U]
             [0U];
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__b_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__b_out 
             = vlSelf->tb_SA__DOT__dut__DOT__b_pipe[0U]
             [0U];
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__a_out 
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__a_out 
             = vlSelf->tb_SA__DOT__dut__DOT__a_pipe[0U]
             [0U];
     } else {
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__acc_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__acc_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__acc_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__acc_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__a_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__b_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__b_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__a_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__b_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__a_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__b_out = 0U;
-        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__a_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__a_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__b_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__b_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__a_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__b_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__a_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__b_out = 0U;
+        vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__a_out = 0U;
     }
-    vlSelf->tb_SA__DOT__acc_out[0U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__acc_out;
-    vlSelf->tb_SA__DOT__acc_out[1U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__acc_out;
-    vlSelf->tb_SA__DOT__acc_out[0U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__acc_out;
-    vlSelf->tb_SA__DOT__acc_out[1U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__acc_out;
-    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[1U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__a_out;
-    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[0U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__b_out;
-    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[0U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__b_out;
-    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[0U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_00__a_out;
-    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[1U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__b_out;
-    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[1U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_11__a_out;
-    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[1U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_10__b_out;
-    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[0U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__pe_01__a_out;
+    vlSelf->tb_SA__DOT__acc_out[0U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out;
+    vlSelf->tb_SA__DOT__acc_out[1U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__acc_out;
+    vlSelf->tb_SA__DOT__acc_out[0U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out;
+    vlSelf->tb_SA__DOT__acc_out[1U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__acc_out;
+    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[1U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__a_out;
+    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[0U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__b_out;
+    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[0U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__b_out;
+    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[0U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__a_out;
+    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[1U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__b_out;
+    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[1U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__a_out;
+    vlSelf->tb_SA__DOT__dut__DOT__b_pipe[1U][0U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__1__KET____DOT__COL__BRA__0__KET____DOT__pe_ij__b_out;
+    vlSelf->tb_SA__DOT__dut__DOT__a_pipe[0U][1U] = vlSelf->tb_SA__DOT__dut__DOT____Vcellout__ROW__BRA__0__KET____DOT__COL__BRA__1__KET____DOT__pe_ij__a_out;
 }
 
 VL_INLINE_OPT void Vtb_SA___024root___nba_sequent__TOP__1(Vtb_SA___024root* vlSelf) {

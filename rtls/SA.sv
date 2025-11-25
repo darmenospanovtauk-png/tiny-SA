@@ -17,64 +17,44 @@ module SA #(
     logic signed [WIDTH-1:0] a_pipe [N][N];
     logic signed [WIDTH-1:0] b_pipe [N][N];  
 
+    genvar i, j;
+    generate
+        for (i=0; i<N; i++) begin : ROW
+            for (j=0; j<N; j++) begin : COL
+
+        logic signed [WIDTH-1:0] pe_a;
+        logic signed [WIDTH-1:0] pe_b;  
+
+        //A 
+        if (j==0) begin : a_0
+            assign pe_a = a_in[i];
+        end else begin  : a_n
+            assign pe_a = a_pipe[i][j-1]; 
+            end 
+
+        //B
+        if (i==0) begin : b_0
+            assign pe_b = b_in[j];
+        end else begin   : b_n
+            assign pe_b = b_pipe[i-1][j]; 
+            end 
+
     pe #(
         .WIDTH(WIDTH),
         .ACC(ACC)
-    ) pe_00 
+    ) pe_ij 
     (
         .rst_n  (rst_n),
         .clk    (clk),
         .en     (en), 
-        .a_in   (a_in [0]), 
-        .b_in   (b_in [0]),
-        .a_out  (a_pipe [0][0]), 
-        .b_out  (b_pipe [0][0]),
-        .acc_out(acc_out [0][0])
+        .a_in   (pe_a), 
+        .b_in   (pe_b),
+        .a_out  (a_pipe [i][j]), 
+        .b_out  (b_pipe [i][j]),
+        .acc_out(acc_out [i][j])
     );  
 
-    pe #(
-        .WIDTH(WIDTH),
-        .ACC(ACC)
-    ) pe_01 
-    (
-        .rst_n  (rst_n),
-        .clk    (clk),
-        .en     (en), 
-        .a_in   (a_pipe [0][0]), 
-        .b_in   (b_in [1]),
-        .a_out  (a_pipe [0][1]), 
-        .b_out  (b_pipe [0][1]),
-        .acc_out(acc_out [0][1])
-    );  
-
-    pe #(
-        .WIDTH(WIDTH),
-        .ACC(ACC)
-    ) pe_10 
-    (
-        .rst_n  (rst_n),
-        .clk    (clk),
-        .en     (en), 
-        .a_in   (a_in [1]), 
-        .b_in   (b_pipe [0][0]),
-        .a_out  (a_pipe [1][0]), 
-        .b_out  (b_pipe [1][0]),
-        .acc_out(acc_out [1][0])
-    );  
-
-    pe #(
-        .WIDTH(WIDTH),
-        .ACC(ACC)
-    ) pe_11 
-    (
-        .rst_n  (rst_n),
-        .clk    (clk),
-        .en     (en), 
-        .a_in   (a_pipe [1][0]), 
-        .b_in   (b_pipe [0][1]),
-        .a_out  (a_pipe [1][1]), 
-        .b_out  (b_pipe [1][1]),
-        .acc_out(acc_out [1][1])
-    );   
-
+            end 
+        end 
+    endgenerate
 endmodule
